@@ -60,10 +60,10 @@ bool MousseCake::operator == (MousseCake &other)
             (taste == other.taste));
 }
 
-// void MousseCake::operator += (int addCakePrice)
-// {
-//     price += addCakePrice;
-// }
+void MousseCake::operator += (int addCakePrice)
+{
+    price += addCakePrice;
+}
 
 std::ostream &operator << (ostream &os, MousseCake &mousseCake)
 {

@@ -15,13 +15,13 @@ private:
 
 public:
     Date();
-    Date(int day, int month, int year) throw(char*);
+    Date(int day, int month, int year);
     int getDay();
     int getMonth();
     int getYear();
-    void setDay(int day) throw(char*);
-    void setMonth(int month) throw(char*);
-    void setYear(int year) throw(char*);
+    void setDay(int day);
+    void setMonth(int month);
+    void setYear(int year);
 
     bool operator < (Date &other);
     bool operator > (Date &other);

@@ -18,7 +18,7 @@ Date::Date()
     year = 2024;
 }
 
-Date::Date(int d, int m, int y) throw (char*) 
+Date::Date(int d, int m, int y)
 {
     if (!ValidDay(d) || !ValidMonth(m) && y < 0) 
     {
@@ -36,18 +36,18 @@ int Date::getMonth() {return month;}
 int Date::getYear() {return year;}
 
 
-void Date::setDay(int d) throw (char*)
+void Date::setDay(int d) 
 {
     if (!ValidDay(d)) throw "Invalid day value";
     day = d;
 }
 
-void Date::setMonth(int m) throw (char*)
+void Date::setMonth(int m) 
 {
     if (!ValidMonth(m)) throw "invalid month value"; 
 }
 
-void Date::setYear(int y) throw (char*)
+void Date::setYear(int y)
 {
     if (y < 0) throw "invalid year value";
     year = y;
