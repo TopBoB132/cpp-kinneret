@@ -1,0 +1,97 @@
+-----------------------------------------------------------q1-----------------------------------
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double WeightedAverage(double arrays[], double weights[])
+{
+    double weight_sum = 0;
+    double sum = 0;     
+    for (int i = 0; i < 4; i++) 
+    {
+       sum += arrays[i] * weights[i];
+       weight_sum += weights[i];
+    }
+    return sum / weight_sum;
+}
+
+int main()
+{
+    double arrays[4] {2,3,4,5};
+    double weights[4] {0.2,0.3,0.4,0.5};
+    cout<<WeightedAverage(arrays, weights);
+    return 0;
+}
+--------------------------------------------------------q2-----------------------------------
+#include <iostream>
+using namespace std;
+bool IsArthmeticProgession(int* arr, int size = 3)
+{
+    int d = arr[1] - arr[0];
+    for (int i = 1; i < size - 1; i++)
+    {
+        if (arr[i + 1] - arr[i] != d)
+            return false;
+    }
+    return true;
+}
+bool IsArthmeticProgession(char* arr, int size = 3)
+{
+    int d = arr[1] - arr[0];
+    for (int i = 1; i < size - 1; i++)
+    {
+        if (arr[i + 1] - arr[i] != d)
+            return false;
+    }
+    return true;
+}
+
+int main()
+{
+    int size;
+    cin >> size;
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        cin >> *arr;
+        arr++;
+    }
+    arr -= size;
+    cout << IsArthmeticProgession(arr, size);
+
+    //delete[] arr;
+    return 0;
+}
+-----------------------------------------------------------q3- סעיף א-----------------------------------
+using namespace std;
+string* split(string str, int size)
+{
+	int spaces = 1;
+	for (int i = 0; i < size; i++)
+	{
+		if (str[i] == ' ')
+			spaces++;
+	}
+	string* arr = new string[spaces];
+	int wordnumber = 0;
+	for (int i=0; i<spaces; i++)
+	{
+		for (int j = 0 + wordnumber; str[j] != ' '; wordnumber++)
+		{
+			arr[i] += str[j];
+;		}
+	}
+	return arr;
+}
+------------------------------------------------2nd part------------------------------------------------
+  char* dubstr(char* str)
+    {
+        char* strDouble = new char[strlen(str)*2];
+        for (int i = 0; i < strlen(str); i++)
+        {
+            strDouble[i] = str[i];
+            strDouble[i+strlen(str)] = str[i];
+        }
+        strDouble[strlen(str) * 2 ] = '\0';
+        return strDouble;
+    }
